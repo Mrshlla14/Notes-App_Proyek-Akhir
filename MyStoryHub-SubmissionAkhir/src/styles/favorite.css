@@ -1,0 +1,57 @@
+/* Favorite page styles */
+#map {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+ 
+  background-color: gray;
+}
+
+.favorite-container {
+  padding: 65px;
+  background-color: var(--accent-color);
+}
+
+.favorite-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 400px;
+}
+
+.favorite-message {
+  text-align: center;
+  padding: 48px;
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  max-width: 600px;
+}
+
+.favorite-icon {
+  font-size: 3rem;
+  color: var(--primary-color);
+  margin-bottom: 24px;
+}
+
+.favorite-message h2 {
+  color: var(--text-color);
+  margin-bottom: 16px;
+}
+
+.favorite-message p {
+  margin-bottom: 24px;
+  color: var(--text-muted);
+}
+
+/* Footer styles */
+footer {
+    background-color: #ff66b36d;
+    text-align: center;
+    padding: 20px;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}

@@ -1,0 +1,458 @@
+/* Base styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border;
+}
+
+:root {
+  /* Color scheme */
+  --primary-color: #ff66b391;
+  --primary-hover-color: #000000ea;
+  --primary-shadow-color: #000000;
+
+  --secondary-color: #fa62aecd;
+  --secondary-hover-color: #f135d5a1;
+
+  --accent-color: #f741ba43;
+  --accent-hover-color: #ffffff;
+
+  --danger-color: #000000;
+  --danger-hover-color: #ff0101;
+
+  --background-color: #ffffff;
+  --card-background: #f741ba43;
+  --text-color: #2d3748;
+  --text-muted: #000000;
+  --border-color: #e2e8f0;
+
+  --font-family: "Montserrat, sans-serif";
+}
+
+/* Home page styles */
+.home-welcome-section {
+  background-color: var(--primary-color);
+  padding: 80px 0 48px;
+  color: rgb(2, 0, 0);
+  position: relative;
+}
+
+.home-welcome-content {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto;
+  justify-content: center;
+}
+
+.home-greeting {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 16px;
+  justify-content: center;
+}
+
+.home-welcome-message {
+  font-size: 1.25rem;
+  margin-bottom: 32px;
+}
+
+.home-actions {
+  display: flex;
+  flex-direction: row;
+  gap: 16px;
+  justify-content: center;
+  margin-bottom: 24px;
+}
+
+.home-action-btn {
+  min-width: 220px;
+}
+
+/* Stories section */
+.stories-section {
+  padding: 60px 20px; /* Menambahkan padding yang lebih besar agar lebih luas */
+  background-color: var(--accent-color);
+  box-sizing: border-box;
+  min-height: 100vh; /* Pastikan tinggi minimal cukup untuk menampung dua baris */
+}
+
+/* Container untuk stories list */
+.stories-list__container {
+  max-width: 100%;
+  min-height: 900px;
+  position: static;
+  margin: 0 auto;
+}
+
+.stories-list {
+  padding: 24px;
+  display: grid;
+  grid-template-columns: repeat(1, 1fr); /* 1 kolom untuk layar kecil */
+  gap: 20px;
+  max-width: 1200px; /* Lebar stories list yang lebih besar */
+  margin: 0 auto;
+}
+
+.stories-list__empty,
+.stories-list__error {
+  text-align: center;
+  padding: 48px 24px;
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.empty-icon,
+.error-icon {
+  font-size: 3rem;
+  color: var(--primary-color);
+  margin-bottom: 16px;
+}
+
+.error-icon {
+  color: var(--danger-color);
+}
+
+/* Responsif untuk menyesuaikan 2 baris */
+@media screen and (min-width: 768px) {
+  .stories-list {
+    grid-template-columns: repeat(2, 1fr); /* 2 kolom pada layar sedang */
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .stories-list {
+    grid-template-columns: repeat(2, 1fr); /* Tetap 2 kolom pada layar besar */
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .stories-list {
+    grid-template-columns: repeat(3, 1fr); /* 3 kolom pada layar ekstra besar */
+  }
+}
+
+/* Gambar pada stories list */
+.stories-list img {
+  width: 100%; /* Membuat gambar responsif */
+  height: 200px; /* Tentukan tinggi tetap untuk gambar */
+  object-fit: cover; /* Agar gambar tidak terdistorsi dan tetap memenuhi kotak */
+  border-radius: 12px;
+  
+}
+
+@keyframes bounce {
+  0%,
+  20%,
+  50%,
+  80%,
+  100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-10px);
+  }
+  60% {
+    transform: translateY(-5px);
+  }
+}
+
+body {
+  font-family: var(--font-family);
+  background-color: var(--background-color);
+  color: var(--text-color);
+  line-height: 1.6;
+}
+
+.container {
+  padding-inline: 24px;
+  margin-inline: auto;
+  max-width: 1200px;
+  width: 100%;
+}
+
+a,
+button {
+  min-height: 44px;
+  min-width: 44px;
+  color: var(--primary-color);
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+a:hover {
+  color: var(--primary-hover-color);
+}
+
+input,
+textarea,
+select {
+  transition: all 0.2s ease;
+  font-family: var(--font-family);
+}
+
+input,
+textarea {
+  min-height: 44px;
+  min-width: 44px;
+  width: 100%;
+  padding: 12px 16px;
+  border-radius: 8px;
+  border: 1px solid var(--border-color);
+  font-size: 1rem;
+  resize: vertical;
+  background-color: white;
+}
+
+input[type="radio"],
+input[type="checkbox"] {
+  min-height: auto;
+  min-width: auto;
+  width: auto;
+  display: inline;
+}
+
+textarea {
+  min-height: 150px;
+}
+
+select {
+  display: inline-block;
+  border-radius: 8px;
+  padding: 12px 16px;
+  font-size: 1rem;
+  line-height: 1.5;
+  border: 1px solid var(--border-color);
+  background-color: white;
+  min-height: 44px;
+}
+
+/* Main content */
+.main-content {
+  min-height: calc(100vh - 80px);
+}
+
+/* Style tombol skip-link */
+.skip-link {
+  position: absolute;
+  top: 10px;
+  left: -9999px; /* sembunyikan saat tidak fokus */
+  background: #000;
+  color: #fff;
+  padding: 8px 16px;
+  z-index: 1000;
+  text-decoration: none;
+  border-radius: 4px;
+  font-weight: bold;
+  transition: left 0.3s ease;
+}
+
+.skip-link:focus {
+  left: 10px; /* muncul saat link mendapat fokus */
+  outline: 2px solid #fff;
+}
+
+/* Section titles */
+.section-title {
+  font-size: 2.25rem;
+  font-weight: 700;
+  color: var(--primary-color);
+  margin-bottom: 16px;
+  text-align: center;
+}
+
+.section-subtitle {
+  font-size: 1.125rem;
+  color: var(--text-muted);
+  text-align: center;
+  margin-bottom: 32px;
+}
+
+
+/* Button styling */
+.home-action-btn {
+  min-width: 180px;
+}
+/* Button styles */
+.btn {
+  background-color: var(--primary-color);
+  border-radius: 8px;
+  padding: 12px 24px;
+  border: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: 600;
+  color: white !important;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: none;
+}
+.btn:hover {
+  background-color: var(--primary-hover-color);
+  transform: translateY(-2px);
+  box-shadow: none;
+}
+
+.btn[disabled] {
+  opacity: 0.7;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+.btn.btn-outline {
+  background-color: transparent;
+  border: 2px solid var(--primary-color);
+  color: var(--primary-color) !important;
+  box-shadow: none;
+}
+
+.btn.btn-outline:hover {
+  background-color: var(--primary-color);
+  color: white !important;
+}
+
+.btn.btn-sm {
+  padding: 8px 16px;
+  font-size: 0.875rem;
+}
+
+input:focus,
+textarea:focus,
+select:focus,
+.btn:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px var(--primary-shadow-color);
+  border-color: var(--primary-color);
+}
+
+/* Container to align the button to the right */
+.button-container {
+  display: flex;
+  justify-content: space-between; 
+  margin: 20px 
+}
+
+/* Style for the favorite button */
+#details-save {
+  padding: 10px 20px;
+  background-color: transparent;
+  border: 2px solid var(--primary-color);
+  color: var(--primary-color) ;
+  font-size: 14px;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+#details-save:hover {
+  background-color: var(--primary-color);
+  color: white !important;
+}
+
+#details-save[disabled] {
+  opacity: 0.7;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+.details__map-wrapper {
+  width: 100%;
+  height: 400px; /* tinggi peta bisa diubah sesuai kebutuhan */
+  position: relative;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+#map {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  background-color: gray;
+  border-radius: 12px;
+}
+
+/* Location section */
+.location-section {
+  padding: 20px;
+  background-color: var(--accent-color); /* Latar belakang pink */
+  border-radius: 12px;
+  margin: 20px 0; /* Memberikan jarak antar elemen */
+  text-align: center;
+}
+
+/* Button container to align buttons */
+.button-container {
+  display: flex;
+  justify-content: space-between; /* Agar tombol Favorite dan Share ada di kiri dan kanan */
+  margin-top: 20px;
+  gap: 10px;
+}
+
+#details-save {
+  align-self: flex-start;
+}
+
+#details-share {
+  align-self: flex-end;
+}
+
+@media screen and (min-width: 768px) {
+  .button-container {
+    justify-content: space-between; 
+  }
+  #details-save,
+  #details-share {
+    flex: 0;
+    margin: 0 10px;
+  }
+}
+
+/* Loader styles */
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.loader {
+  text-align: center;
+}
+
+.loader::after {
+  content: "";
+  display: inline-block;
+  box-sizing: border-box;
+  width: 50px;
+  height: 50px;
+  border: 4px solid rgba(0, 0, 0, 0.1);
+  border-bottom-color: var(--primary-color);
+  border-radius: 100%;
+  animation: rotation 1s linear infinite;
+}
+
+.loader.loader-absolute::after {
+  position: absolute;
+  inset: 0;
+  margin: auto;
+}
+
+i.loader-button {
+  animation: rotation 1s linear infinite;
+}
+
+/* Footer styles */
+footer {
+    background-color: #ff66b36d;
+    text-align: center;
+    padding: 20px;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
