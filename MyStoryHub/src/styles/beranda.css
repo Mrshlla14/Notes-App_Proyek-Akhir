@@ -1,0 +1,37 @@
+/* Beranda page styles */
+.beranda-container {
+  padding: 48px 0;
+  min-height: calc(100vh - 80px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #ff66b300;
+}
+
+.beranda-content {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.beranda-header {
+  text-align: center;
+}
+
+.beranda-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--primary-color);
+}
+
+.beranda-description {
+  text-align: center;
+  font-size: 1.25rem;
+  margin-bottom: 50px;
+}
+
+@media screen and (min-width: 768px) {
+  .welcome-features {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
